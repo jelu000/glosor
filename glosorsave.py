@@ -4,7 +4,7 @@ import json
 print(".:Glosor:.")
 
 glosor = []
-file = open("tglosor.dat", "w+")
+#file = open("tglosor.dat", "w+")
 
 
 Tread = input('Läs senaste glosor från fil? j/n :' )
