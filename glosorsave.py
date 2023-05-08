@@ -1,7 +1,9 @@
 import pickle
-import json
+import os
 
-print(".:Glosor:.")
+os.system('cls' if os.name == 'nt' else 'clear')
+
+print("\t.:Glosor:.\n")
 
 glosor = []
 #file = open("tglosor.dat", "w+")
@@ -27,19 +29,20 @@ else:
 			
 
 while 1:
-	print('\n' * 100)
-	print('Nu startar glosförhöret')
+	os.system('cls' if os.name == 'nt' else 'clear')
+	
+	print('\n\t-Nu startar glosförhöret-\n')
 	
 	poeng=0
 	
 	for g in glosor:
 		
 		if g[1] == input(g[0] +' = '):
-			print('Rätt!')
+			print('Rätt!\n')
 			poeng= poeng+1
 			
 		else:
-			print('Fel! korrekt svar: ' + g[1])
+			print('Fel! korrekt svar: ' + g[1] + '\n')
 			
 	print('Du hade ' + str(poeng)+ ' av '+ str(len(glosor)))
 	
@@ -48,9 +51,7 @@ while 1:
 if 'j' == input('Vill du spara senaste glosor? j/n: '):
 	with open('test.txt', 'wb') as fp: pickle.dump(glosor, fp)
 	
-	#file.writelines(glosor)
-	#file.close()
-	#glosor[]with.open('tglosor.dat', 'wb'):
+	
 
 		
 		
