@@ -1,4 +1,4 @@
 # Ignore SQLite database files in the "glosor" subfolder
 #glosorSqLite/*.sqlite
-glosorSqLite/glosor.db
+*.db
 # Add other rules as needed

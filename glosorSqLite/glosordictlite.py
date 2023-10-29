@@ -1,16 +1,20 @@
 import os
+import glosor_db_handler
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("\n\tJippi! nya glosor")
 
     glosdictonary = {}
+    db_handler = glosor_db_handler.glosor()
 
     while True:
         val = print_menu()
             
         if val=="1":#mata in nya glosor
-            glosdictonary = add_glosor()
+            db_handler.my_drop_table()
+            
+            glosdictonary = add_glosor(db_handler)
             print(f"Bug= {type(glosdictonary)}")
             
             #os.system('cls' if os.name == 'nt' else 'clear')
@@ -33,16 +37,18 @@ def print_menu():
     return input("\n\n\tMata in val: ")
 
 #--------------------------------------------------------------------------
-def add_glosor():
+def add_glosor(t_db_handler):
     t_glosdictonary = {}
     #Mata in
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         sweglosa = input("\n\tMata in Svensk glosa: ")
         utlglosa = input("\n\tMata in utlänsk stavning: ")
+
+        t_db_handler.add_glosa_to_table(sweglosa, utlglosa)
  
         t_glosdictonary[sweglosa] = utlglosa
-        
+
         en_till = input("\n\tVill du mata in en till? j/n ")
 
         if (en_till == "n"):
