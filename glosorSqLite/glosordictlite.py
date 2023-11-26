@@ -13,7 +13,7 @@ def main():
             
         if val=="1":#mata in nya glosor
             db_handler.my_drop_table()
-            
+            db_handler.create_table()
             glosdictonary = add_glosor(db_handler)
             print(f"Bug= {type(glosdictonary)}")
             
