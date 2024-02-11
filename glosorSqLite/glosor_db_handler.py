@@ -7,17 +7,18 @@ class glosor:
         self.table_name = 'glostable'
         
 
-    def my_drop_table(self):
+    def my_delete_table(self):
 
         conn = sqlite3.connect(self.dbname)
         # Create a cursor object to execute SQL commands
         cursor = conn.cursor()
         #print("drop TAble")
         
-        # Execute the DROP TABLE statement
+        # Execute the DELETE TABLE statement
         #print(f"dbname = {self.table_name}")
         #input("Mata In")
-        cursor.execute(f'''DROP TABLE glostable''')
+        deletetable = f"DELETE FROM {self.table_name}"
+        cursor.execute(deletetable)
 
         # Commit the transaction to make the change permanent
         conn.commit()
